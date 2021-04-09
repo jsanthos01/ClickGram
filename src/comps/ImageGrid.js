@@ -31,6 +31,12 @@ const ImageGrid = (props) => {
       
     
     return (
+        <>
+        <div className="title">
+            <h2>The Palette Wall</h2>
+            <h3> Click on the swatches to copy the hexcode</h3>
+        </div>
+
         <div className="image-box">
             { docs && docs.map( doc => (
                 <div className="img-grid">
@@ -80,7 +86,7 @@ const ImageGrid = (props) => {
             ))}
         </div>
         
-        
+        </>
     )
 }
 
