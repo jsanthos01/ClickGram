@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React , { useState, useRef } from 'react'
 import useFirestore from "../hooks/useFirestore";
 import { motion } from "framer-motion";
 
@@ -6,6 +6,9 @@ const ImageGrid = (props) => {
     const { setSelectedImage } = props;
     const { docs } = useFirestore('images');
     const [message, setMessage] = useState("Copy Hex Code:");
+    const [selected, isSelected] = useState(false)
+    const textAreaRef = useRef(null);
+
     const SWATCHES_STYLES = {
         marginTop: 20,
         display: "flex",
@@ -13,21 +16,24 @@ const ImageGrid = (props) => {
         flexWrap: "wrap"
       };
 
-    const handleClick = (event) => {
-    /* Get the text field */
-    event.preventDefault();
-    var copyText = document.getElementById("color-hex");
-    console.log(copyText);
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    // const handleClick = (event) => {
+    // /* Get the text field */
+    // event.preventDefault();
+    // // isSelected(true);
+    // // var copyText = document.getElementById("color-hex-selected");
+    // // console.log(copyText);
+    // // /* Select the text field */
+    // // // copyText.select();
+    // // // copyText.setSelectionRange(0, 99999); /* For mobile devices */
     
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
-    
-    /* Alert the copied text */
-    setMessage("Copied Hex Code: " + copyText.value);
-    }
+    // // /* Copy the text inside the text field */
+    // // document.execCommand("copy");
+    // console.log(textAreaRef.current)
+    // // textAreaRef.current.select();
+    // // document.execCommand('copy');
+    // /* Alert the copied text */
+    // setMessage("Copied Hex Code: " + textAreaRef.current.select());
+    // }
       
     
     return (
@@ -67,16 +73,18 @@ const ImageGrid = (props) => {
                                         margin: 15,
                                         borderRadius: 10,
                                     }}
-                                    onClick={handleClick}
+                                    // onClick={handleClick}
                                 >
-                                    <span class="tooltiptext">{message}</span>
+                                    <span class="tooltiptext" >{message}</span>
                                 </div>
                                 <span 
                                     style={{
                                         color: "black",
                                         fontSize: "12px"
                                     }}
-                                    id="color-hex"
+                                    ref={textAreaRef}
+                                    value={color}
+                                    id={selected ? "color-hex-selected" :"color-hex"}
                                 >{color}</span>
                             </div>
                         ))}

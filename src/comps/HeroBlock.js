@@ -45,26 +45,24 @@ const HeroBlock = () => {
             
                     <div className="title">
                         <h1>Extract colors from your favourite pics!</h1>
-                        <h2>Create your own photo-inspired color palette!</h2>
+                        <h2>Create your own photo-inspired <br /> color palette!</h2>
                     </div>
                     
                     <div className="input_box">
-                        <input className="url_Image" type="url" onChange={handleChange} placeholder="enter an image url or upload" />
+                        {/* <input className="url_Image" type="url" onChange={handleChange} placeholder="enter an image url or upload" /> */}
                         <label>
                             <input 
                                 className="upload_button"
                                 type="file" 
                                 onChange={handleChange}
                             />
-                            <span>+</span>
-                            <span className="tooltiptext">
-                                Upload an Image
-                            </span>
+                            <span>Upload an Image</span>
                         </label>
                     </div>
                     <div className="button_box">
-                        <button className="random_button">Get Random Image</button>
-                        <button className="palette_button"> Generate Palette</button>
+                        {/* <button className="random_button">Get Random Image</button> */}
+                        {/* <button className="palette_button"  onChange={handleChange} >Upload an Image</button> */}
+                        {/* <button className="palette_button"> Generate Palette</button> */}
                     </div>
                     <div className="output">
                         { error && <div className="error">{ error }</div> }

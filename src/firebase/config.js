@@ -1,16 +1,19 @@
-import firebase from "firebase/app"
+// Import the functions you need from the SDKs you need
+import firebase from "firebase/app";
 import "firebase/storage";
 import "firebase/firestore";
 
+
 // Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyBq8I3JhBSvVtNxmUQpcNwMPpvFtDJz1mk",
-    authDomain: "clickgram-842c3.firebaseapp.com",
-    projectId: "clickgram-842c3",
-    storageBucket: "clickgram-842c3.appspot.com",
-    messagingSenderId: "1049872760036",
-    appId: "1:1049872760036:web:3696c42443a8bed574c0f1"
+const firebaseConfig = {
+  apiKey: "AIzaSyDH_wjRptTvNza__Q6OZnOURe2yWPnKWa8",
+  authDomain: "firegram-8840b.firebaseapp.com",
+  projectId: "firegram-8840b",
+  storageBucket: "firegram-8840b.appspot.com",
+  messagingSenderId: "493582039345",
+  appId: "1:493582039345:web:3017560e3558125f2c5810"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
